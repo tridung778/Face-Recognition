@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <style>
+        #container {
+            width: 100%;
+            position: relative;
+        }
+
+        #container img {
+            width: 30%;
+            height: auto;
+        }
+
+        #container canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Trang web nhận diện khuôn mặt</h1>
+    <h3>@tridung</h3>
+    <input type="file" id="file-input">
+    <input type="file" id="myFileInput" multiple accept="image/*" form="e">
+    <div id="container"></div>
+</body>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"
+    integrity="sha256-XWbslTONf8w2XOFUgbhZm69LbiLJpiS3bUyoIaZpplk=" crossorigin="anonymous"></script>
+<script src="app.js"></script>
+<script src="test.js"></script>
+
+</html>
