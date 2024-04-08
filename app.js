@@ -7,13 +7,14 @@ async function loadTrainingData() {
     "Rina Ishihara",
     "Takizawa Laura",
     "Yua Mikami",
+    "Thuận",
   ];
 
   const FaceDescriptors = [];
   for (const label of labels) {
     const descriptors = [];
     for (let i = 1; i <= 4; i++) {
-      const image = await faceapi.fetchImage(`/data/${label}/${i}.jpeg`);
+      const image = await faceapi.fetchImage(`data/${label}/${i}.jpeg`);
       const detection = await faceapi
         .detectSingleFace(image)
         .withFaceLandmarks()
@@ -34,9 +35,9 @@ async function init() {
     text: "Chờ một chút để tải model nhận diện!",
   }).showToast();
   await Promise.all([
-    faceapi.nets.ssdMobilenetv1.loadFromUri("/models"),
-    faceapi.nets.faceLandmark68Net.loadFromUri("/models"),
-    faceapi.nets.faceRecognitionNet.loadFromUri("/models"),
+    faceapi.nets.ssdMobilenetv1.loadFromUri("models"),
+    faceapi.nets.faceLandmark68Net.loadFromUri("models"),
+    faceapi.nets.faceRecognitionNet.loadFromUri("models"),
   ]);
 
   const trainingData = await loadTrainingData();
